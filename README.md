@@ -2,7 +2,9 @@
 
 A fast-paced browser game where you dodge falling blocks to survive as long as possible. Built with TypeScript, HTML5 Canvas, and modern web technologies.
 
-![Game Screenshot](screenshot.png)
+![Game Screenshot](screenshot1.png)
+
+![Game Screenshot](screenshot2.png) 
 
 ## Features
 
