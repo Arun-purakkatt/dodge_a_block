@@ -1,5 +1,16 @@
 # Dodge-a-Block
 
+
+### 🛠️ Built With
+
+- 💡 **TypeScript**, **HTML5 Canvas**, and **CSS3**
+- ⚙️ **Cursor IDE** – for AI-native coding
+- 🤖 **Taskmaster Claude** – task-based development
+- 🧠 **Claude via Together.ai/OpenRouter** – for game logic assistance
+- ✨ **Vibe Coding** – fast, flow-based dev iteration
+
+
+
 A fast-paced browser game where you dodge falling blocks to survive as long as possible. Built with TypeScript, HTML5 Canvas, and modern web technologies.
 
 ![Game Screenshot](screenshot1.png)
@@ -136,4 +147,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Built with TypeScript and HTML5 Canvas
 - Developed using modern web development practices
-- Inspired by classic arcade games 
+- Inspired by classic arcade games
+
