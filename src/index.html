@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodge-a-Block</title>
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-ui">
+            <div id="score-display">Score: <span id="score">0</span></div>
+            <div id="high-score-display">Best: <span id="high-score">0</span></div>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        <div id="game-overlay" class="hidden">
+            <div id="start-screen" class="screen">
+                <h1>Dodge-a-Block</h1>
+                <p class="description">Move left and right to dodge falling blocks!</p>
+                <div class="controls">
+                    <p>Controls:</p>
+                    <ul>
+                        <li>← / A: Move Left</li>
+                        <li>→ / D: Move Right</li>
+                        <li>Space: Start/Restart</li>
+                    </ul>
+                </div>
+                <div class="high-scores">
+                    <h3>High Scores</h3>
+                    <ol id="start-high-scores"></ol>
+                </div>
+                <button id="start-button" class="pulse-button">Start Game</button>
+            </div>
+            <div id="game-over-screen" class="screen hidden">
+                <h2>Game Over!</h2>
+                <div class="score-info">
+                    <div class="score-container">
+                        <div class="score-label">Your Score</div>
+                        <div id="final-score" class="score-value">0</div>
+                        <div id="score-diff" class="score-diff"></div>
+                    </div>
+                    <div class="score-container">
+                        <div class="score-label">Best Score</div>
+                        <div id="final-high-score" class="score-value">0</div>
+                    </div>
+                    <p id="rank-info" class="rank"></p>
+                </div>
+                <div class="game-stats">
+                    <h3>Game Statistics</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Blocks Dodged</div>
+                            <div id="blocks-dodged" class="stat-value">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Max Speed</div>
+                            <div id="max-speed" class="stat-value">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Distance Moved</div>
+                            <div id="distance-moved" class="stat-value">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Close Calls</div>
+                            <div id="close-calls" class="stat-value">0</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="high-scores">
+                    <h3>High Scores</h3>
+                    <ol id="game-over-high-scores"></ol>
+                </div>
+                <button id="restart-button" class="pulse-button">Play Again</button>
+                <p class="hint">Press SPACE to restart</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html> 

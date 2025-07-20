@@ -1,0 +1,817 @@
+{
+  "master": {
+    "tasks": [
+      {
+        "id": 1,
+        "title": "Initialize Project Structure and Dependencies",
+        "description": "Set up the project repository with TypeScript, HTML, CSS, and necessary build tools.",
+        "details": "Create a new repository, initialize with npm, set up TypeScript configuration, and prepare folder structure for src, styles, and assets.",
+        "testStrategy": "Verify project builds successfully with a basic index.html and TypeScript compilation without errors.",
+        "priority": "high",
+        "dependencies": [],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create Repository and Initialize npm",
+            "description": "Set up a new version control repository and initialize npm to manage project dependencies and scripts.",
+            "dependencies": [],
+            "details": "Create a new Git repository, run 'npm init' to generate package.json, and set up basic scripts for build and start commands.",
+            "status": "done",
+            "testStrategy": "Verify repository is initialized with a commit, package.json exists, and npm scripts are configured correctly."
+          },
+          {
+            "id": 2,
+            "title": "Configure TypeScript and Folder Structure",
+            "description": "Set up TypeScript configuration and organize project folders for source code, styles, and assets.",
+            "dependencies": [],
+            "details": "Create tsconfig.json with appropriate compiler options, and establish folders: src, styles, assets. Add initial TypeScript file in src.",
+            "status": "done",
+            "testStrategy": "Run 'tsc' to ensure TypeScript compiles without errors and folder structure is correctly recognized."
+          },
+          {
+            "id": 3,
+            "title": "Create Basic HTML Skeleton with Canvas Element",
+            "description": "Develop the main HTML file including a responsive canvas element for the game.",
+            "dependencies": [],
+            "details": "Create index.html in the root or public folder, include a <canvas> element with id, and link compiled JavaScript or TypeScript bundle.",
+            "status": "done",
+            "testStrategy": "Open the HTML file in a browser and verify the canvas element loads correctly and is visible."
+          },
+          {
+            "id": 4,
+            "title": "Style Canvas for Responsiveness",
+            "description": "Apply CSS to ensure the game canvas scales appropriately across different screen sizes.",
+            "dependencies": [],
+            "details": "Write CSS rules to set max-width, height auto, and center the canvas. Use media queries if necessary for responsiveness.",
+            "status": "done",
+            "testStrategy": "Resize browser window and verify the canvas maintains aspect ratio and is centered on various devices."
+          },
+          {
+            "id": 5,
+            "title": "Set Up Build Tools and Scripts",
+            "description": "Configure build tools such as Webpack or Parcel to compile TypeScript and bundle assets.",
+            "dependencies": [],
+            "details": "Install necessary dev dependencies, create configuration files (webpack.config.js or equivalent), and update package.json scripts for build and dev.",
+            "status": "done",
+            "testStrategy": "Run build scripts and verify output files are generated correctly without errors, and the project runs as expected."
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Design Game Canvas and Layout",
+        "description": "Create the main HTML structure and style the game canvas for responsiveness.",
+        "details": "Implement an HTML5 canvas element within the main page, style it with CSS for different screen sizes, and ensure it is centered and responsive.",
+        "testStrategy": "Check the canvas appears correctly across different window sizes and browsers.",
+        "priority": "high",
+        "dependencies": [
+          1
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create HTML Structure with Canvas Element",
+            "description": "Set up the main HTML page and add an HTML5 canvas element that will serve as the game area.",
+            "dependencies": [],
+            "details": "Create an index.html file with a container div and include a <canvas> element with a unique ID. Ensure the canvas is properly placed within the DOM structure.",
+            "status": "done",
+            "testStrategy": "Open the HTML page in a browser and verify that the canvas element is present and visible in the DOM."
+          },
+          {
+            "id": 2,
+            "title": "Apply Responsive CSS Styling to Canvas",
+            "description": "Style the canvas with CSS to ensure it scales correctly across different screen sizes and is centered.",
+            "dependencies": [],
+            "details": "Use CSS Flexbox or Grid to center the canvas container. Set the canvas width and height using relative units (%, vw, vh) or max/min constraints to maintain responsiveness.",
+            "status": "done",
+            "testStrategy": "Resize browser window and verify that the canvas scales proportionally and remains centered on various devices."
+          },
+          {
+            "id": 3,
+            "title": "Implement Dynamic Canvas Sizing with JavaScript",
+            "description": "Make the canvas size adapt dynamically to window resize events to maintain responsiveness.",
+            "dependencies": [],
+            "details": "Add JavaScript code to listen for window resize events and adjust the canvas width and height properties accordingly, maintaining aspect ratio if needed.",
+            "status": "done",
+            "testStrategy": "Resize the browser window and observe the canvas resizing smoothly without layout issues."
+          },
+          {
+            "id": 4,
+            "title": "Define Game Area Boundaries and Layout",
+            "description": "Establish the game area dimensions and layout within the canvas, including margins or UI overlays if necessary.",
+            "dependencies": [],
+            "details": "Determine the playable area within the canvas, possibly by defining a coordinate system or margins. Draw boundary lines or background to visualize the game area.",
+            "status": "done",
+            "testStrategy": "Render the game area and verify its size and position across different screen sizes, ensuring it aligns with design expectations."
+          },
+          {
+            "id": 5,
+            "title": "Integrate Canvas into Main Game Loop",
+            "description": "Set up the initial connection between the canvas and the game rendering logic, preparing for further game development.",
+            "dependencies": [],
+            "details": "Create a basic JavaScript or TypeScript script to get the canvas context, clear the canvas, and prepare for rendering frames. Link this setup to the game loop for future updates.",
+            "status": "done",
+            "testStrategy": "Run the page and verify that the canvas is cleared and ready for rendering, with no errors in the console."
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Implement Player Control Logic",
+        "description": "Develop the logic for player movement left and right within the game area.",
+        "details": "Use TypeScript to listen for keyboard events (arrow keys or A/D), update player position smoothly, and confine movement within boundaries.",
+        "testStrategy": "Test player movement responsiveness and boundary confinement with keyboard input.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set Up Keyboard Event Listeners",
+            "description": "Implement event listeners in TypeScript to detect when the left/right arrow keys or A/D keys are pressed and released.",
+            "dependencies": [],
+            "details": "Add event listeners for 'keydown' and 'keyup' events on the window object. Map specific keys to movement directions. Store key states for continuous movement handling.",
+            "status": "done",
+            "testStrategy": "Verify that key press and release events are correctly detected and stored in key state variables."
+          },
+          {
+            "id": 2,
+            "title": "Implement Smooth Player Movement",
+            "description": "Update the player's position smoothly based on active key states, ensuring continuous movement when keys are held down.",
+            "dependencies": [
+              "3.1"
+            ],
+            "details": "Use requestAnimationFrame loop to update player position each frame. Adjust position based on key states and a defined speed. Ensure movement is fluid and frame-rate independent.",
+            "status": "done",
+            "testStrategy": "Test that holding down movement keys results in continuous, smooth player movement within boundaries."
+          },
+          {
+            "id": 3,
+            "title": "Add Boundary Checks for Player Movement",
+            "description": "Constrain the player's horizontal position within the game area's left and right boundaries.",
+            "dependencies": [
+              "3.2"
+            ],
+            "details": "Implement boundary conditions in the movement update logic. Prevent player position from exceeding the minimum and maximum X coordinates of the game area.",
+            "status": "done",
+            "testStrategy": "Verify that the player cannot move beyond the left and right edges of the game area during movement."
+          },
+          {
+            "id": 4,
+            "title": "Integrate Player Control into Game Loop",
+            "description": "Combine keyboard input handling, smooth movement, and boundary checks into the main game update cycle.",
+            "dependencies": [
+              "3.2",
+              "3.3"
+            ],
+            "details": "Ensure the movement logic runs each frame within the game loop. Confirm that player position updates correctly based on current key states and boundaries are enforced.",
+            "status": "done",
+            "testStrategy": "Test overall player control responsiveness and boundary confinement during gameplay simulation."
+          },
+          {
+            "id": 5,
+            "title": "Test Player Control Responsiveness",
+            "description": "Perform comprehensive testing to ensure player movement reacts promptly to keyboard input and remains within boundaries.",
+            "dependencies": [
+              "3.4"
+            ],
+            "details": "Simulate key presses and releases, observe movement, and verify smoothness and boundary adherence. Use both manual testing and automated scripts if possible.",
+            "status": "done",
+            "testStrategy": "Verify that movement starts/stops immediately with key presses/releases and that player never moves outside the game area."
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Create Falling Blocks and Spawning Mechanism",
+        "description": "Implement the spawning of falling blocks at random X positions with initial speed.",
+        "details": "Generate block objects with properties for position, speed, and appearance. Spawn at intervals, update position each frame, and remove when off-screen.",
+        "testStrategy": "Verify blocks spawn at random positions, fall correctly, and are removed after leaving the screen.",
+        "priority": "high",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Block Object Structure",
+            "description": "Define the data structure for falling blocks, including properties for position, speed, and appearance.",
+            "dependencies": [],
+            "details": "Create a TypeScript interface or class for Block with properties such as x (number), y (number), speed (number), and appearance (e.g., color or sprite).",
+            "status": "done",
+            "testStrategy": "Verify the structure correctly represents block properties and can be instantiated without errors."
+          },
+          {
+            "id": 2,
+            "title": "Implement Block Creation Function",
+            "description": "Develop a function to generate new block objects with random X positions and initial speed.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "Write a function that returns a new Block instance with x set to a random value within game width, y starting at top (0), and speed initialized to a base value.",
+            "status": "done",
+            "testStrategy": "Test the function creates blocks with valid positions and speeds, and appears correctly in the game area."
+          },
+          {
+            "id": 3,
+            "title": "Set Up Spawning Interval",
+            "description": "Create a mechanism to spawn new blocks at regular intervals during gameplay.",
+            "dependencies": [
+              "4.2"
+            ],
+            "details": "Use setInterval or a timing check within the game loop to call the block creation function periodically, e.g., every 500ms.",
+            "status": "done",
+            "testStrategy": "Ensure blocks spawn at consistent intervals and appear at random X positions at the top of the screen."
+          },
+          {
+            "id": 4,
+            "title": "Implement Block Movement Logic",
+            "description": "Update each block's position based on its speed during each frame update.",
+            "dependencies": [
+              "4.1"
+            ],
+            "details": "In the game loop, iterate over all active blocks and increment their y position by their speed value each frame.",
+            "status": "done",
+            "testStrategy": "Verify blocks move downward smoothly and at their assigned speeds during each frame update."
+          },
+          {
+            "id": 5,
+            "title": "Handle Off-Screen and Removal of Blocks",
+            "description": "Remove blocks from the game once they move beyond the bottom of the screen to optimize performance.",
+            "dependencies": [
+              "4.4"
+            ],
+            "details": "Check each frame if a block's y position exceeds the game height; if so, remove it from the active blocks array.",
+            "status": "done",
+            "testStrategy": "Test that blocks are correctly removed after leaving the visible area, preventing memory leaks."
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implement Collision Detection System",
+        "description": "Detect collisions between player square and falling blocks to end the game.",
+        "details": "Use bounding box collision detection between player and blocks each frame. Trigger game over on collision.",
+        "testStrategy": "Test collision detection with overlapping and non-overlapping scenarios, ensuring game ends accurately.",
+        "priority": "high",
+        "dependencies": [
+          3,
+          4
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Collision Detection Data Structures",
+            "description": "Define and implement data structures to represent bounding boxes for player and blocks, ensuring efficient collision checks each frame.",
+            "dependencies": [],
+            "details": "Create bounding box objects that encapsulate position and size for both player and falling blocks. Ensure these structures are accessible during each game update cycle for collision detection.",
+            "status": "done",
+            "testStrategy": "Verify bounding box objects correctly reflect current positions and sizes of player and blocks through unit tests."
+          },
+          {
+            "id": 2,
+            "title": "Implement Bounding Box Collision Logic",
+            "description": "Develop the function that checks for overlaps between the player's bounding box and each falling block's bounding box to detect collisions.",
+            "dependencies": [
+              "5.1"
+            ],
+            "details": "Write a collision detection function that takes two bounding boxes and returns true if they overlap (collision) or false otherwise. Use axis-aligned bounding box (AABB) collision detection method.",
+            "status": "done",
+            "testStrategy": "Test the collision function with overlapping and non-overlapping bounding boxes to ensure accurate detection."
+          },
+          {
+            "id": 3,
+            "title": "Integrate Collision Detection into Game Loop",
+            "description": "Embed the collision detection check within the main game update loop to continuously monitor for collisions each frame.",
+            "dependencies": [
+              "5.2"
+            ],
+            "details": "In the game’s update function, iterate over all falling blocks, check for collision with the player using the collision logic, and trigger game over if a collision is detected.",
+            "status": "done",
+            "testStrategy": "Simulate scenarios with overlapping and non-overlapping positions to verify collision detection triggers game over correctly."
+          },
+          {
+            "id": 4,
+            "title": "Add Visual Feedback for Collisions",
+            "description": "Enhance user experience by providing visual cues when a collision occurs, such as flashing the player or showing an explosion effect.",
+            "dependencies": [
+              "5.3"
+            ],
+            "details": "Implement visual effects that activate upon collision detection, like changing the player's color temporarily or displaying an animation at the collision point.",
+            "status": "done",
+            "testStrategy": "Test visual effects trigger correctly during collision events and do not interfere with game performance."
+          },
+          {
+            "id": 5,
+            "title": "Implement Collision Effects and End Game Trigger",
+            "description": "Finalize collision handling by adding effects like sound or particle effects and stopping the game when a collision occurs.",
+            "dependencies": [
+              "5.4"
+            ],
+            "details": "On collision, trigger sound effects, display particles or animations, and set game state to 'game over' to halt gameplay and show final score.",
+            "status": "done",
+            "testStrategy": "Perform end-to-end testing to ensure collision triggers effects and game over state reliably every time."
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "title": "Create Game Loop and Frame Management",
+        "description": "Set up a consistent game loop running at 60 FPS for updates and rendering.",
+        "details": "Use requestAnimationFrame for the game loop, update game state, and render each frame.",
+        "testStrategy": "Ensure smooth animations and consistent frame rate without lag or jitter.",
+        "priority": "high",
+        "dependencies": [
+          2,
+          4
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Set Up Basic Game Loop Structure",
+            "description": "Implement the core structure of the game loop using requestAnimationFrame, establishing the continuous cycle for updates and rendering.",
+            "dependencies": [],
+            "details": "Create a function called gameLoop that calls itself via requestAnimationFrame. Initialize variables for tracking time and frame count. Ensure the loop is started after the game initializes.",
+            "status": "done",
+            "testStrategy": "Verify that the gameLoop function is called repeatedly at approximately 60 FPS and that it initiates correctly upon game start."
+          },
+          {
+            "id": 2,
+            "title": "Implement Frame Timing and Delta Calculation",
+            "description": "Add logic to measure elapsed time between frames to maintain consistent update intervals and handle frame timing accurately.",
+            "dependencies": [
+              "6.1"
+            ],
+            "details": "Within the gameLoop, record timestamps of each frame, calculate delta time (time difference), and use it to scale updates for smooth motion regardless of frame rate variations.",
+            "status": "done",
+            "testStrategy": "Test that delta time values are reasonable (~16.67ms for 60 FPS) and that movement updates are smooth and consistent."
+          },
+          {
+            "id": 3,
+            "title": "Create Update Function for Game State",
+            "description": "Develop a function to update game objects, physics, and game logic each frame based on delta time.",
+            "dependencies": [
+              "6.2"
+            ],
+            "details": "Design an updateGameState(deltaTime) function that modifies positions, checks collisions, and updates game variables. Call this function within the gameLoop.",
+            "status": "done",
+            "testStrategy": "Verify game objects move correctly over time, and game logic behaves as expected when deltaTime varies."
+          },
+          {
+            "id": 4,
+            "title": "Implement Rendering Function",
+            "description": "Create a function to draw all game elements onto the canvas each frame after updating the game state.",
+            "dependencies": [
+              "6.3"
+            ],
+            "details": "Design a render() function that clears the canvas and draws game objects based on their current states. Call this after updateGameState in the gameLoop.",
+            "status": "done",
+            "testStrategy": "Check that rendering updates visually match game state changes smoothly and without flickering."
+          },
+          {
+            "id": 5,
+            "title": "Optimize Frame Management and Performance",
+            "description": "Refine the game loop to ensure consistent frame rate, minimize lag, and handle performance bottlenecks.",
+            "dependencies": [
+              "6.4"
+            ],
+            "details": "Implement techniques such as requestAnimationFrame throttling, culling off-screen objects, and limiting expensive calculations per frame. Profile performance to identify bottlenecks.",
+            "status": "done",
+            "testStrategy": "Monitor frame rate stability and responsiveness during gameplay, ensuring minimal jitter and smooth animations."
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "title": "Implement Score Tracking and Display",
+        "description": "Display survival time as score during gameplay and update in real-time.",
+        "details": "Calculate elapsed time since start, format to one decimal, and render on canvas or overlay.",
+        "testStrategy": "Verify score updates accurately every frame and displays correctly.",
+        "priority": "high",
+        "dependencies": [
+          6
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Initialize Score Variables and Timing",
+            "description": "Set up variables to track start time and current score, and initialize them at game start.",
+            "dependencies": [],
+            "details": "Create a variable to store the game start timestamp when the game begins. Initialize a score variable to zero. Ensure these are reset at each game restart.",
+            "status": "done",
+            "testStrategy": "Verify that start time is recorded correctly at game start and score variables reset properly."
+          },
+          {
+            "id": 2,
+            "title": "Calculate and Format Survival Time",
+            "description": "Compute elapsed time since game start, format it to one decimal place, and prepare it for display.",
+            "dependencies": [
+              "7.1"
+            ],
+            "details": "On each game frame, calculate current time minus start time to get elapsed time. Use toFixed(1) or equivalent to format to one decimal. Store this formatted string for rendering.",
+            "status": "done",
+            "testStrategy": "Check that the displayed score updates accurately each frame and maintains one decimal precision."
+          },
+          {
+            "id": 3,
+            "title": "Render Score on Canvas or Overlay",
+            "description": "Display the formatted survival time on the game screen, overlaying the game canvas.",
+            "dependencies": [
+              "7.2"
+            ],
+            "details": "Use the game's rendering context or overlay DOM element to draw or update the score text each frame. Position it consistently (e.g., top-left corner).",
+            "status": "done",
+            "testStrategy": "Verify that the score appears correctly and updates in real-time during gameplay across different screen sizes."
+          },
+          {
+            "id": 4,
+            "title": "Update Score in Real-Time During Gameplay",
+            "description": "Ensure the score updates every frame as the game progresses, reflecting the current survival time.",
+            "dependencies": [
+              "7.3"
+            ],
+            "details": "Integrate the score update logic into the main game loop, so the displayed score refreshes continuously based on the latest calculated time.",
+            "status": "done",
+            "testStrategy": "Observe the score during gameplay to confirm it increases smoothly and accurately with survival duration."
+          },
+          {
+            "id": 5,
+            "title": "Implement Score Reset on Game Restart",
+            "description": "Reset the score and start time variables when the game restarts or resets.",
+            "dependencies": [
+              "7.4"
+            ],
+            "details": "On game restart, reinitialize start time to current timestamp and reset score variables to zero or initial state to ensure accurate scoring for new session.",
+            "status": "done",
+            "testStrategy": "Test game restart functionality to confirm score resets and begins counting anew without residual data."
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "Persist and Display High Score using Local Storage",
+        "description": "Save the highest survival time score and display it on start and game over screens.",
+        "details": "Use localStorage to save and retrieve high score, update if current score exceeds it.",
+        "testStrategy": "Test high score persistence across sessions and correct display.",
+        "priority": "high",
+        "dependencies": [
+          7
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Data Structure for High Scores",
+            "description": "Define how high scores will be stored, including support for multiple top scores if needed, and decide on the format in localStorage.",
+            "dependencies": [],
+            "details": "Create a JSON object or array to hold high score data, such as { topScores: [score1, score2, ...] }. Decide on key naming conventions for localStorage, e.g., 'highScores'.",
+            "status": "done",
+            "testStrategy": "Verify the data structure can be serialized and deserialized correctly from localStorage."
+          },
+          {
+            "id": 2,
+            "title": "Implement High Score Retrieval and Initialization",
+            "description": "Write code to load existing high scores from localStorage at game start, or initialize default high scores if none exist.",
+            "dependencies": [
+              "8.1"
+            ],
+            "details": "Use localStorage.getItem('highScores') and parse the JSON. If null, initialize with default values like an empty array or zero scores. Store the data in a global or accessible variable.",
+            "status": "done",
+            "testStrategy": "Test retrieval on game start with and without existing data; verify correct initialization."
+          },
+          {
+            "id": 3,
+            "title": "Update High Scores After Game Over",
+            "description": "Compare current game score with stored high scores, update the list if current score qualifies, and save back to localStorage.",
+            "dependencies": [
+              "8.2"
+            ],
+            "details": "On game over, check if current score exceeds any stored high scores. Insert or replace as needed, sort the list if maintaining multiple scores, and save the updated list using localStorage.setItem('highScores', JSON.stringify(data)).",
+            "status": "done",
+            "testStrategy": "Simulate game over with various scores; verify high scores list updates correctly and persists."
+          },
+          {
+            "id": 4,
+            "title": "Display High Score on Start and Game Over Screens",
+            "description": "Render the highest score(s) on the start screen and after game over, ensuring visibility and clarity.",
+            "dependencies": [
+              "8.2",
+              "8.3"
+            ],
+            "details": "Access the stored high score data and update the UI elements (e.g., DOM elements or canvas overlays) to show the top score(s). Ensure updates happen at appropriate times.",
+            "status": "done",
+            "testStrategy": "Check UI displays correct high scores on start and game over screens; verify updates after new high scores."
+          },
+          {
+            "id": 5,
+            "title": "Integrate High Score Logic into Game Flow",
+            "description": "Connect the high score system with the existing game start, end, and restart processes to ensure seamless persistence and display.",
+            "dependencies": [
+              "8.3",
+              "8.4"
+            ],
+            "details": "Modify game over and start routines to invoke high score retrieval, updating, and display functions. Ensure high scores are correctly updated after each game session and shown appropriately.",
+            "status": "done",
+            "testStrategy": "Perform end-to-end testing of game sessions to confirm high scores persist, update, and display correctly across sessions."
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Create Start Screen and UI Elements",
+        "description": "Design a minimal start screen with a start button and high score display.",
+        "details": "Build a simple overlay with a start button, high score text, and instructions.",
+        "testStrategy": "Verify UI appears correctly and start button triggers game start.",
+        "priority": "medium",
+        "dependencies": [
+          2
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design the Start Screen Layout",
+            "description": "Create the HTML structure and CSS styles for the start screen overlay, including placement for the start button, high score display, and instructions.",
+            "dependencies": [],
+            "details": "Use HTML div elements for overlay container, button, and text elements. Style with CSS Flexbox or Grid for centered layout, ensuring responsiveness and minimal design aesthetic.",
+            "status": "done",
+            "testStrategy": "Verify the start screen overlay appears correctly centered with all elements visible and styled appropriately across different screen sizes."
+          },
+          {
+            "id": 2,
+            "title": "Implement Start Button Functionality",
+            "description": "Add JavaScript to handle click events on the start button to initiate game start sequence.",
+            "dependencies": [
+              "9.1"
+            ],
+            "details": "Attach an event listener to the start button element that triggers a function to hide the start screen overlay and signal the game to begin.",
+            "status": "done",
+            "testStrategy": "Click the start button and confirm the overlay disappears, and game state transitions from start screen to active gameplay."
+          },
+          {
+            "id": 3,
+            "title": "Display High Score and Instructions",
+            "description": "Render the high score value and game instructions within the start screen overlay.",
+            "dependencies": [
+              "9.1"
+            ],
+            "details": "Fetch high score from local storage or game state, insert into designated text element, and style instructions for clarity and visibility.",
+            "status": "done",
+            "testStrategy": "Verify high score updates correctly and instructions are clearly visible on the start screen."
+          },
+          {
+            "id": 4,
+            "title": "Add Animations and Transitions to UI Elements",
+            "description": "Enhance the start screen with visual feedback through CSS animations and transitions for buttons and text elements.",
+            "dependencies": [
+              "9.1"
+            ],
+            "details": "Apply CSS transitions for hover effects on the start button, fade-in effects for the overlay, and subtle animations for high score updates.",
+            "status": "done",
+            "testStrategy": "Observe smooth animations and transitions when interacting with UI elements; confirm no jank or lag occurs."
+          },
+          {
+            "id": 5,
+            "title": "Implement Visual Feedback for User Interaction",
+            "description": "Provide visual cues such as button hover effects, click animations, and feedback when the start button is pressed.",
+            "dependencies": [
+              "9.2"
+            ],
+            "details": "Use CSS classes or inline styles to change button appearance on hover and click, possibly adding small animations or color changes for feedback.",
+            "status": "done",
+            "testStrategy": "Hover over and click the start button to ensure visual feedback is immediate and noticeable, confirming responsiveness."
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "title": "Develop Game Over Screen and Restart Options",
+        "description": "Display current score, best score, and options to restart via button or spacebar.",
+        "details": "Create overlay for game over, show scores, and implement restart logic on button click or spacebar press.",
+        "testStrategy": "Test game over display, restart functionality, and score updates.",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          7,
+          8
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Design Game Over Overlay UI",
+            "description": "Create a visually appealing overlay that appears when the game ends, including areas for score display, best score, and restart options.",
+            "dependencies": [],
+            "details": "Use HTML and CSS to design a centered overlay with semi-transparent background. Include placeholders for current score, best score, and buttons or text prompts for restart. Ensure responsiveness and visual clarity.",
+            "status": "done",
+            "testStrategy": "Verify overlay appears correctly on game over, is styled properly, and elements are correctly positioned across different screen sizes."
+          },
+          {
+            "id": 2,
+            "title": "Implement Score and Best Score Display",
+            "description": "Show the current score and best score within the game over overlay, updating dynamically based on game data.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Retrieve score data from game state. Render scores as text elements within the overlay. Highlight the best score if applicable. Ensure scores update correctly when game ends.",
+            "status": "done",
+            "testStrategy": "Test that scores display correctly after game over, update accurately, and reflect the latest game data."
+          },
+          {
+            "id": 3,
+            "title": "Add Restart Button and Spacebar Functionality",
+            "description": "Create a restart button and implement spacebar key detection to restart the game from the game over screen.",
+            "dependencies": [
+              "10.1"
+            ],
+            "details": "Add a clickable button within the overlay that triggers game reset. Attach event listener for spacebar key press to also trigger restart. Ensure both methods reset game state properly.",
+            "status": "done",
+            "testStrategy": "Verify clicking the restart button and pressing spacebar both successfully restart the game, resetting scores and game variables."
+          },
+          {
+            "id": 4,
+            "title": "Implement Restart Logic and State Reset",
+            "description": "Define the function that resets game variables, hides the game over overlay, and prepares the game to start anew.",
+            "dependencies": [
+              "10.3"
+            ],
+            "details": "Clear game-specific data such as scores, positions, and timers. Hide the overlay and reinitialize game components. Ensure restart is seamless and no residual data persists.",
+            "status": "done",
+            "testStrategy": "Test multiple restarts to confirm game resets correctly, overlay hides, and gameplay resumes without glitches."
+          },
+          {
+            "id": 5,
+            "title": "Add Score Animation and Visual Effects on Game Over",
+            "description": "Enhance the game over screen with animated score numbers and visual effects to improve user experience.",
+            "dependencies": [
+              "10.2",
+              "10.4"
+            ],
+            "details": "Implement simple animations such as score counting up or flashing effects using CSS or JavaScript. Add visual cues like glow or fade-in for overlay elements. Ensure animations are smooth and do not interfere with functionality.",
+            "status": "done",
+            "testStrategy": "Verify animations trigger correctly on game over, run smoothly, and do not cause performance issues."
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "title": "Optimize Performance and Responsiveness",
+        "description": "Ensure smooth gameplay at 60 FPS with efficient collision detection and rendering.",
+        "details": "Profile the game loop, optimize rendering and collision checks, and ensure no lag.",
+        "testStrategy": "Monitor frame rate, input responsiveness, and smooth animations across browsers.",
+        "priority": "medium",
+        "dependencies": [
+          6,
+          4,
+          5
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Profile the Game Loop Performance",
+            "description": "Analyze the current game loop to identify bottlenecks affecting frame rate and responsiveness.",
+            "dependencies": [],
+            "details": "Use browser developer tools or profiling libraries to monitor frame rendering times, CPU usage, and identify slow operations within the game loop.",
+            "status": "done",
+            "testStrategy": "Record performance metrics before optimization to establish baseline frame rates and CPU load."
+          },
+          {
+            "id": 2,
+            "title": "Optimize Rendering Operations",
+            "description": "Improve the efficiency of rendering code to ensure smooth visuals at 60 FPS.",
+            "dependencies": [
+              "11.1"
+            ],
+            "details": "Reduce unnecessary draw calls, batch rendering where possible, and minimize state changes in WebGL or Canvas API. Use requestAnimationFrame for synchronized rendering.",
+            "status": "done",
+            "testStrategy": "Monitor frame rate stability across different scenes and animations, ensuring consistent 60 FPS."
+          },
+          {
+            "id": 3,
+            "title": "Enhance Collision Detection Efficiency",
+            "description": "Refine collision detection logic to reduce computational overhead per frame.",
+            "dependencies": [
+              "11.1"
+            ],
+            "details": "Implement spatial partitioning techniques such as quad-trees or grid-based partitioning to limit collision checks to nearby objects. Use bounding box checks first to cull unnecessary calculations.",
+            "status": "done",
+            "testStrategy": "Test collision detection accuracy and measure performance improvements with large numbers of objects."
+          },
+          {
+            "id": 4,
+            "title": "Implement Memory Management Improvements",
+            "description": "Reduce memory allocations and garbage collection pauses during gameplay.",
+            "dependencies": [
+              "11.1"
+            ],
+            "details": "Reuse objects where possible, avoid creating new objects each frame, and monitor memory usage to prevent leaks. Use profiling tools to identify memory hotspots.",
+            "status": "done",
+            "testStrategy": "Track memory consumption over time during gameplay to ensure stability and absence of leaks."
+          },
+          {
+            "id": 5,
+            "title": "Optimize Input Handling for Responsiveness",
+            "description": "Ensure player input is processed with minimal latency to maintain responsiveness.",
+            "dependencies": [
+              "11.1"
+            ],
+            "details": "Implement event listeners for keyboard input, debounce or throttle input processing if necessary, and synchronize input updates with the game loop. Test responsiveness across devices.",
+            "status": "done",
+            "testStrategy": "Measure input latency and responsiveness through automated tests and manual testing across browsers and devices."
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "title": "Write Documentation and Final Testing",
+        "description": "Document core functions, setup instructions, and perform final testing.",
+        "details": "Create README, comment code, and run comprehensive tests for all features.",
+        "testStrategy": "Perform end-to-end testing, verify all features work as expected, and ensure code quality.",
+        "priority": "low",
+        "dependencies": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "status": "done",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Create a comprehensive README documentation",
+            "description": "Draft a detailed README file that explains the project overview, setup instructions, core functionalities, and usage guidelines.",
+            "dependencies": [],
+            "details": "Use markdown to structure the README, include sections for installation, usage, features, and contribution guidelines. Ensure clarity and completeness for new users.",
+            "status": "done",
+            "testStrategy": "Review the README for clarity, completeness, and correctness by a team member unfamiliar with the project."
+          },
+          {
+            "id": 2,
+            "title": "Comment and document core functions and modules",
+            "description": "Add descriptive comments to all critical code sections, functions, and modules to clarify their purpose and usage.",
+            "dependencies": [
+              "12.1"
+            ],
+            "details": "Go through the codebase systematically, add inline comments, and update function headers with purpose, parameters, and return values. Use consistent commenting style.",
+            "status": "done",
+            "testStrategy": "Perform code reviews to ensure comments accurately describe functionality and improve code readability."
+          },
+          {
+            "id": 3,
+            "title": "Develop and run comprehensive feature tests",
+            "description": "Create and execute tests covering all game features, including spawning, movement, collision detection, and rendering.",
+            "dependencies": [
+              "12.2"
+            ],
+            "details": "Implement automated tests where possible, and manual test cases for visual and interactive features. Verify each feature works as intended under different scenarios.",
+            "status": "done",
+            "testStrategy": "Use a combination of unit tests, integration tests, and manual testing to validate all functionalities across browsers and devices."
+          },
+          {
+            "id": 4,
+            "title": "Perform final code quality review and refactoring",
+            "description": "Review the entire codebase for consistency, efficiency, and adherence to coding standards, then refactor as needed.",
+            "dependencies": [
+              "12.3"
+            ],
+            "details": "Use static analysis tools, conduct peer reviews, and optimize code structure for readability and performance. Remove redundant or unused code.",
+            "status": "done",
+            "testStrategy": "Re-run all tests after refactoring to ensure no regressions or new issues are introduced."
+          },
+          {
+            "id": 5,
+            "title": "Conduct end-to-end testing and finalize documentation",
+            "description": "Perform comprehensive testing of the complete game experience, finalize all documentation, and prepare for deployment.",
+            "dependencies": [
+              "12.4"
+            ],
+            "details": "Test the game thoroughly from start to finish, verify all features, and ensure documentation is complete and accurate. Address any issues found.",
+            "status": "done",
+            "testStrategy": "Use real user testing sessions, gather feedback, and confirm that all aspects meet quality standards before release."
+          }
+        ]
+      }
+    ],
+    "metadata": {
+      "created": "2025-07-20T13:14:17.053Z",
+      "updated": "2025-07-20T14:06:54.498Z",
+      "description": "Tasks for master context"
+    }
+  }
+}

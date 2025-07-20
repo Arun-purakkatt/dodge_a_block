@@ -1,0 +1,35 @@
+{
+    "name": "dodge-a-block",
+    "version": "1.0.0",
+    "description": "A browser game where you dodge falling blocks",
+    "main": "src/index.ts",
+    "scripts": {
+        "start": "webpack serve --mode development",
+        "build": "webpack --mode production",
+        "test": "jest",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage"
+    },
+    "keywords": [
+        "game",
+        "browser",
+        "typescript",
+        "canvas"
+    ],
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/jest": "^29.5.12",
+        "css-loader": "^6.10.0",
+        "html-webpack-plugin": "^5.6.0",
+        "jest": "^29.7.0",
+        "jest-environment-jsdom": "^29.7.0",
+        "style-loader": "^3.3.4",
+        "ts-jest": "^29.1.2",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.3.3",
+        "webpack": "^5.90.1",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1"
+    }
+}

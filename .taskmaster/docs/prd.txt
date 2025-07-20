@@ -1,0 +1,86 @@
+# Dodge-a-Block Game PRD (v1.0)
+
+## Project Overview
+Dodge-a-Block is a browser-based arcade game where players control a square that must dodge falling blocks to survive as long as possible. The game features increasing difficulty over time and persistent high scores.
+
+## Technology Stack
+- TypeScript for game logic and type safety
+- HTML5 for game canvas/elements
+- CSS for styling and animations
+- Local Storage for score persistence
+
+## Core Features
+
+### Game Mechanics
+1. Player Control
+   - Player controls a square that moves left and right
+   - Movement should be smooth and responsive
+   - Player is confined to the game area boundaries
+
+2. Falling Blocks
+   - Blocks spawn at random X positions at the top of the screen
+   - Initial falling speed is moderate for new players
+   - Speed increases every 10 seconds to raise difficulty
+   - Blocks should be visually distinct from the player square
+
+3. Collision System
+   - Detect collisions between player square and falling blocks
+   - Game ends immediately upon collision
+   - Visual feedback on collision (optional effect/animation)
+
+### Game Flow
+1. Start Screen
+   - Clean, minimal interface
+   - Start button or prompt
+   - Display high score if available
+
+2. Gameplay
+   - Real-time score counter (survival time)
+   - Visual indication of speed increase intervals
+   - Smooth game loop and consistent frame rate
+
+3. Game Over Screen
+   - Display current score
+   - Show best score from local storage
+   - Instant restart with spacebar
+   - Restart button for mouse users
+   - Visual feedback for restart options
+
+### Score System
+1. Scoring
+   - Score based on survival time
+   - Display in seconds with one decimal point
+   - Updates in real-time during gameplay
+
+2. High Score
+   - Persist best score in local storage
+   - Load and display on start/game over screens
+   - Update when current score exceeds best score
+
+## Technical Requirements
+
+### Performance
+- Consistent 60 FPS gameplay
+- Smooth animations and movement
+- Efficient collision detection
+- No visible lag in controls
+
+### Browser Compatibility
+- Support modern browsers (Chrome, Firefox, Safari, Edge)
+- Responsive design for different window sizes
+- Graceful fallback for unsupported features
+
+### Code Quality
+- TypeScript for type safety
+- Modular code structure
+- Clear separation of concerns
+- Documented core functions
+- Maintainable game loop implementation
+
+## Future Considerations (v2+)
+- Power-ups and special abilities
+- Different block types and patterns
+- Visual effects and particles
+- Sound effects and background music
+- Multiple difficulty levels
+- Mobile touch controls 
